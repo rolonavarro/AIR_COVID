@@ -6,6 +6,7 @@ from flask import (
     jsonify,
     request,
     redirect)
+from config import username, password
 
 #################################################
 # Flask Setup
@@ -17,9 +18,9 @@ from sqlalchemy import create_engine
 
 # Create engine
 # Note: User will need to supply their own PostgreSQL password under variable below
-user = 'postgres'
+user = username
 host = 'localhost'
-password = 'postgres'
+password = password
 port = '5432'
 db = 'avg_aqi'
 uri = f'postgresql://{user}:{password}@{host}:{port}/{db}'
